@@ -73,7 +73,7 @@ class EventDashboard extends Component {
     <EventList events={events}/>
         </Grid.Column>
         <Grid.Column width={6}>
-            <Button onClick={this. handleIsOpenToggle} positive content='Create Event'/>
+            <Button onClick={this.handleIsOpenToggle} positive content='Create Event'/>
         {isOpen &&<EventForm cancelFormOpen={this.handleIsOpenToggle}/> }
         </Grid.Column>
     </Grid>
