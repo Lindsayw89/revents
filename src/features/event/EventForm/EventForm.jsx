@@ -10,10 +10,10 @@ import { Segment, Form, Button } from 'semantic-ui-react'
          hostedBy:''
      };
 
-    handleFormSubmit = (evt) => {
+    handleFormSubmit = evt => {
 
         evt.preventDefault();
-        console.log(this.state)
+        this.props.createEvent(this.state);
     }
     handleInputChange= ({target:{name, value}}) => {
     this.setState({
