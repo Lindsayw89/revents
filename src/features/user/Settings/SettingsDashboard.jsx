@@ -17,7 +17,6 @@ export const SettingsDashboard = () => {
             <Route path='/settings/about' component={AboutPage}/>
             <Route path='/settings/photos' component={PhotosPage}/>
             <Route path='/settings/account' component={AccountPage}/>
-
                </Switch>
       
            </Grid.Column>

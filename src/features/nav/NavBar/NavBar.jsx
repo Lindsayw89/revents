@@ -40,4 +40,4 @@ handleSignOut= () => {
         )
     }
 }
-export default withRouter(NavBar) ;
+export default withRouter(NavBar);
