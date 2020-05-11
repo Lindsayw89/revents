@@ -1,9 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import EventDashboard from '../../features/event/EventDashboard/EventDashboard';
 import NavBar from '../../features/nav/NavBar/NavBar';
-import { Container, Grid } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css'
-import { Route } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import HomePage from '../../features/home/HomePage';
 import EventDetailedPage from '../../features/event/EventDetailed/EventDetailedPage';
 import PeopleDashboard from '../../features/user/PeopleDashboard/PeopleDashboard';
@@ -23,13 +23,15 @@ render() {
                 <Fragment>
         <NavBar />
        <Container className="main">  
-      
-       <Route path='/events' component={EventDashboard}/>
+      <Switch key={this.props.location.key} >
+      <Route exact path='/events' component={EventDashboard}/>
        <Route path='/events/:id' component={EventDetailedPage}/>
        <Route path='/people' component={PeopleDashboard}/>
        <Route path='/profile/:id' component={UserDetailedPage}/>
        <Route path='/settings' component={SettingsDashboard}/>
-       <Route path='/createEvent' component={EventForm}/>
+       <Route path={['/createEvent', '/manage/:id']} component={EventForm}/>
+      </Switch>
+     
 
         </Container>
         </Fragment>
@@ -42,4 +44,4 @@ render() {
 }
     
 }
-export default App;
+export default withRouter(App);
